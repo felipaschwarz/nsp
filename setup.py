@@ -19,6 +19,6 @@ setup(
     description=DESCRIPTION,
     long_description=long_description,
     packages=find_packages(),
-    install_requires=['numpy', 'scipy', 'torch', 'networkx', 'pickle', 'matplotlib', 'torch'],
+    install_requires=['numpy', 'scipy', 'torch', 'networkx', 'matplotlib', 'torch'],
     keywords=['python', 'neural network', 'analysis', 'activations', 'activation pattern', 'fourier analysis'],
 )
