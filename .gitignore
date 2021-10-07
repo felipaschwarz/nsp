@@ -4,6 +4,7 @@ networks/
 datasets/
 tutorials/
 output/
+outputs/
 pypi_updateroutine.txt
 
 ### macOS ###
