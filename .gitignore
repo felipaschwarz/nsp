@@ -2,10 +2,8 @@
 ### short-term ###
 networks/
 datasets/
-tutorial_1.py
-tutorial_2.py
-download_datasets.py
-pypi_update-routine.txt
+tutorials/
+pypi_updateroutine.txt
 
 ### macOS ###
 # General
