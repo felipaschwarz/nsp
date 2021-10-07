@@ -10,6 +10,8 @@ git push origin main
 3. Update pypi
 python setup.py sdist bdist_wheel
 python -m twine upload dist/*
+or
+python -m twine upload --skip-existing dist/*
 
 4. Check update
 pip3 uninstall nsp

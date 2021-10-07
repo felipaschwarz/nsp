@@ -14,10 +14,10 @@ graph = nsp.NNGraph(activations)
 spectrum = graph.transform(activations)
 
 nsp.Visualizer.visualize_activations(activations,
-                                pdf_filepath='output/visual/tutorial_1/activations.pdf',
+                                pdf_filepath='output/visual/tutorial_10/activations.pdf',
                                 style='layernorm',
                                 cmap_style='viridis')
 nsp.Visualizer.visualize_activations(spectrum,
-                                pdf_filepath='output/visual/tutorial_1/spectrum.pdf',
+                                pdf_filepath='output/visual/tutorial_10/spectrum.pdf',
                                 style='layernorm',
                                 cmap_style='viridis')
