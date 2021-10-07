@@ -1,0 +1,16 @@
+1. Make changes
+- fix bug
+- update version number
+
+2. Update on github
+git add .
+git commit -m "message"
+git push origin main
+
+3. Update pypi
+python setup.py sdist bdist_wheel
+python -m twine upload dist/*
+
+4. Check update
+pip3 uninstall nsp
+pi

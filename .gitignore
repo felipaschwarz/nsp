@@ -5,6 +5,7 @@ datasets/
 tutorial_1.py
 tutorial_2.py
 download_datasets.py
+pypi_update-routine.txt
 
 ### macOS ###
 # General
