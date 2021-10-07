@@ -4,7 +4,7 @@ import torch
 import torch.nn as nn
 import copy
 
-from nnsp.transformer import Transformer
+from nsp.transformer import Transformer
 
 class NNGraph(nx.DiGraph):
     # INCL set to True: includes edge even if weight = 0.
