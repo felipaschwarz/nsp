@@ -13,13 +13,13 @@ LONG_DESCRIPTION = 'Analyse activation patterns of neural networks as causal sig
 
 # Setting up
 setup(
-    name="nnsp",
+    name="nsp",
     version=VERSION,
     author="Felipa Schwarz",
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
     long_description=long_description,
     packages=find_packages(),
-    install_requires=['numpy', 'scipy', 'torch', 'itertools', 'networkx', 'copy', 'pickle', 'matplotlib'],
+    install_requires=['numpy', 'scipy', 'torch', 'itertools', 'networkx', 'copy', 'pickle', 'matplotlib', 'torch'],
     keywords=['python', 'neural network', 'analysis', 'activations', 'activation pattern', 'fourier analysis'],
 )
