@@ -7,9 +7,9 @@ here = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = '0.0.4'
+VERSION = '0.0.5'
 DESCRIPTION = 'Neural Network Signal Processing'
-LONG_DESCRIPTION = 'Analyse activation patterns of neural networks as causal signals on directed acyclic graphs (DAGs).'
+LONG_DESCRIPTION = 'Analyze activation patterns of neural networks as causal signals on directed acyclic graphs (DAGs).'
 
 # Setting up
 setup(
