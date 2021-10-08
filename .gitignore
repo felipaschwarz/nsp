@@ -2,7 +2,10 @@
 ### short-term ###
 networks/
 datasets/
-tutorials/
+tutorials/outputs/
+tutorials/datasets/
+tutorials/networks/
+tutorial_10.py
 outputs/
 pypi_updateroutine.txt
 
