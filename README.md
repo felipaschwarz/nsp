@@ -72,7 +72,7 @@ nsp.Visualizer.visualize_activations(activations, pdf_filepath='activations.pdf'
 nsp.Visualizer.visualize_activations(spectrum, pdf_filepath='spectrum.pdf', style='layernorm', cmap_style='viridis')
 ```
 
-For more details check out the [**tutorials**](https://github.com/felipaschwarz/nsp/tutorials).
+For more details check out the [**tutorials**](https://github.com/felipaschwarz/nsp/tree/main/tutorials) and read the [**documentation**](https://github.com/felipaschwarz/nsp/tree/main/documentation).
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

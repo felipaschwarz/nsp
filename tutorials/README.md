@@ -1,11 +1,5 @@
-# Neural Network Signal Processing Tutorials
+# Tutorials
 
-Download this directory and execute the `.py` files.
+## `tutorial_1.py`
 
-## Activations
-
-## NNGraph
-
-## Transformations
-
-## OutputLoader
+## `tutorial_2.py`

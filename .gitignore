@@ -2,6 +2,7 @@
 ### short-term ###
 networks/
 datasets/
+tutorials_private/
 tutorials/outputs/
 tutorials/datasets/
 tutorials/networks/
