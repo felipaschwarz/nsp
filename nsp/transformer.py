@@ -24,7 +24,7 @@ class Transformer:
             L = Transformer.compute_laplacian(graph)
             n = graph.number_of_nodes()
             eigenvalues, eigenvectors = np.linalg.eigh(L.asfptype().toarray())
-            inv_F = eigenvectors
+            inv_F = scipy.linalg.lu_factor(eigenvectors)
         else:
             raise NotImplementedError
         return inv_F

@@ -5,7 +5,6 @@ import copy
 
 class Activations():
     def __init__(self, network, input):
-        self.network = network
         self.layernames = ['input']
         self.layerdescriptions = [f'Input{list(input.shape)}']
         self.layeractivations = [input]

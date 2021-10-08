@@ -10,13 +10,13 @@ class NNGraph(nx.DiGraph):
     # INCL set to True: includes edge even if weight = 0.
     # Otherwise only edges with weight !=0 are added.
     # Especially, INCL = False will only have one incoming edge per MaxPool Activation
-    INCL = True
-
-    def __init__(self, activations):
+    def __init__(self, activations, INCL=True):
         super().__init__()
+        self.INCL = INCL
         self.add_nodes_from_activations(activations)
         self.add_edges_from_jacobian(activations)
         self.inv_F = None
+        self.lu_piv = None
 
     def add_nodes_from_activations(self, activations):
         for index_layer, layeractivation in enumerate(activations.layeractivations):
@@ -69,12 +69,26 @@ class NNGraph(nx.DiGraph):
                         self.add_edge(from_node, to_node)
 
     def compute_transformer(self, type='standard'):
-        self.inv_F = Transformer.compute_inv_fourier_matrix(self, type=type)
+        if type =='standard':
+            self.inv_F = Transformer.compute_inv_fourier_matrix(self, type=type)
+            return inv_F
+        elif type =='laplacian':
+            self.lu_piv = Transformer.compute_inv_fourier_matrix(self, type=type)
+            return lu_piv
+        else:
+            raise NotImplementedError
 
     def transform(self, activations, type='standard'):
-        if self.inv_F is None:
-            self.compute_transformer()
-        return Transformer.compute_fourier_activations(activations=activations, inv_F=self.inv_F, type=type, lu_piv=None)
+        if type =='standard':
+            if self.inv_F is None:
+                self.compute_transformer(type=type)
+            return Transformer.compute_fourier_activations(activations=activations, inv_F=self.inv_F, type=type, lu_piv=None)
+        elif type =='laplacian':
+            if self.lu_piv is None:
+                self.lu_piv = Transformer.compute_inv_fourier_matrix(self, type=type)
+            return Transformer.compute_fourier_activations(activations=activations, inv_F=None, type=type, lu_piv=lu_piv)
+        else:
+            raise NotImplementedError
 
     def node_id(self, node):
         nodes = list(self.nodes)
