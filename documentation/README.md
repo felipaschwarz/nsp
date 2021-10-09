@@ -60,6 +60,20 @@ Directed graph representing in the computational graph structure of a Pytorch ne
 |`transform(activations, type='standard')`|Compute the Fourier coefficients, or spectrum, of the `activations`. If `type='standard'` the Fourer coefficient w.r.t. [[1]](https://arxiv.org/pdf/2012.04358.pdf) are computed. If `type='laplacian'` the Fourer coefficient w.r.t. [[2]](https://arxiv.org/pdf/1211.0053.pdf) are computed. Returns `Activations`.|
 |`node_id(node)`|Get the index of a node in the `NNGraph` in the total order of all nodes.<br>Returns `int`.|
 
+## Visualizer
+
+`class Visualizer`
+
+Visualize data
+
+#### Methods
+
+|Method|Description|
+|---|---|
+|`visualize_pattern(activations, pdf_filepath, scale='layerscale', cmap_style='viridis')`|Visualize `activations: Activations` and store them at `pdf_filepath: String`.
+
+`scale='layerscale'` provides one scale, i.e. colorbar, per activation layer. `scale='globalscale'` provides one scale, i.e. colorbar, activation.<br>`scale='layernorm'` provides one scale, i.e. colorbar, per activation layer and sets the center of the scale to 0. `scale='globalnorm'` provides one scale, i.e. colorbar, activation and sets the center of the scale to 0. `scale='layernorm'` and `scale='globalnorm'` are particularly useful for diverging colormap styles.<br>Pick a `cmap_style` from [matplotlib colormaps](https://matplotlib.org/stable/tutorials/colors/colormaps.html).<br>Returns `None`|
+
 ## OutputLoader
 
 `class OutputLoader`
