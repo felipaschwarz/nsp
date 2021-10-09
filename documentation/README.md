@@ -56,7 +56,7 @@ Directed graph representing in the computational graph structure of a Pytorch ne
 |---|---|
 |`compute_transformer(type='standard')`|If `type='standard'` it computes the inverse Fourier Transform matrix w.r.t. [[1]](https://arxiv.org/pdf/2012.04358.pdf).<br>Returns [`scipy.sparse.tril(A, format='csr')`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.tril.html). If `type='laplacian'` it computes the inverse Fourier Transform matrix w.r.t. [[2]](https://arxiv.org/pdf/1211.0053.pdf).<br>Returns [`lu, piv: ndarray, ndarray`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.lu_factor.html).|
 |`transform(activations, type='standard')`|Compute the Fourier coefficients, or spectrum, of the `activations`. If `type='standard'` the Fourer coefficient w.r.t. [[1]](https://arxiv.org/pdf/2012.04358.pdf) are computed. If `type='laplacian'` the Fourer coefficient w.r.t. [[2]](https://arxiv.org/pdf/1211.0053.pdf) are computed. Returns `Activations`.|
-|`node_id(node)`|Return the index of a node in the `NNGraph` in the total order of all nodes.<br>Returns `int`.|
+|`node_id(node)`|Get the index of a node in the `NNGraph` in the total order of all nodes.<br>Returns `int`.|
 
 ## OutputLoader
 
