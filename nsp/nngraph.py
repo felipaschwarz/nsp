@@ -68,12 +68,12 @@ class NNGraph(nx.DiGraph):
                         assert self.has_node(to_node), f'to_node does not exist: {to_node}'
                         self.add_edge(from_node, to_node)
 
-    def compute_transformer(self, type='standard'):
+    def get_transformer(self, type='standard'):
         if type =='standard':
-            self.inv_F = Transformer.compute_inv_fourier_matrix(self, type=type)
+            self.inv_F = Transformer.get_inv_fourier_matrix(self, type=type)
             return inv_F
         elif type =='laplacian':
-            self.lu_piv = Transformer.compute_inv_fourier_matrix(self, type=type)
+            self.lu_piv = Transformer.get_inv_fourier_matrix(self, type=type)
             return lu_piv
         else:
             raise NotImplementedError
@@ -81,12 +81,12 @@ class NNGraph(nx.DiGraph):
     def transform(self, activations, type='standard'):
         if type =='standard':
             if self.inv_F is None:
-                self.compute_transformer(type=type)
-            return Transformer.compute_fourier_activations(activations=activations, inv_F=self.inv_F, type=type, lu_piv=None)
+                self.get_transformer(type=type)
+            return Transformer.get_fourier_coefficients(activations=activations, inv_F=self.inv_F, type=type, lu_piv=None)
         elif type =='laplacian':
             if self.lu_piv is None:
-                self.lu_piv = Transformer.compute_inv_fourier_matrix(self, type=type)
-            return Transformer.compute_fourier_activations(activations=activations, inv_F=None, type=type, lu_piv=lu_piv)
+                self.lu_piv = Transformer.get_inv_fourier_matrix(self, type=type)
+            return Transformer.get_fourier_coefficients(activations=activations, inv_F=None, type=type, lu_piv=lu_piv)
         else:
             raise NotImplementedError
 

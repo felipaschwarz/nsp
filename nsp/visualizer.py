@@ -29,7 +29,7 @@ class Visualizer:
         norm = matplotlib.colors.TwoSlopeNorm(vmin=vmin, vcenter=0., vmax=vmax)
         return norm
 
-    def visualize_activations(activations, pdf_filepath, style='globalnorm', cmap_style='viridis'):
+    def visualize_pattern(activations, pdf_filepath, style='globalnorm', cmap_style='viridis'):
         os.makedirs(os.path.dirname(pdf_filepath), exist_ok=True)
         with PdfPages(pdf_filepath) as pdf:
             globalnorm = Visualizer.get_norm(activations.layeractivations)
