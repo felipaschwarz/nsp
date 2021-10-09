@@ -10,6 +10,7 @@ Holds the activation pattern generated in a neural network
 
 #### Parameters
 
+| |Description|
 |---|---|
 |`network: torch.nn.Module`|Pytroch neural network.|
 
