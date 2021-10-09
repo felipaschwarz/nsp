@@ -26,8 +26,6 @@ activations = nsp.Activations(network, image)
 graph = nsp.NNGraph(activations)
 
 # -------- OPTIONAL --------
-# These lines are optional.
-
 # precompute the standard Fourier transform matrix
 graph.get_transformer(type='standard')
 
@@ -49,27 +47,27 @@ spectrum_lap = graph.transform(activations, type='laplacian')
 
 # visualize the activation pattern
 nsp.Visualizer.visualize_pattern(activations,
-                                pdf_filepath='tutorial_2/visual/activations.pdf',
+                                pdf_filepath='tutorial_2/activations.pdf',
                                 scale='layernorm',
                                 cmap_style='viridis')
 
 # visualize the Fourier coefficients, type='standard'
 nsp.Visualizer.visualize_pattern(spectrum,
-                                pdf_filepath='tutorial_2/visual/spectrum.pdf',
+                                pdf_filepath='tutorial_2/spectrum.pdf',
                                 scale='layernorm',
                                 cmap_style='viridis')
 
 # visualize the Fourier coefficients, type='laplacian'
 nsp.Visualizer.visualize_pattern(spectrum_lap,
-                                pdf_filepath='tutorial_2/visual/spectrum_lap.pdf',
+                                pdf_filepath='tutorial_2/spectrum_lap.pdf',
                                 scale='layernorm',
                                 cmap_style='viridis')
 
 # -------- OPTIONAL --------
 # save the activations for later use
-nsp.OutputLoader.save(activations, 'outputs/data/activations.obj')
+nsp.OutputLoader.save(activations, 'tutorial_2/activations.obj')
 # save the Fourier coefficients, type='standard', for later use
-nsp.OutputLoader.save(activations, 'outputs/data/spectrum.obj')
+nsp.OutputLoader.save(activations, 'tutorial_2/spectrum.obj')
 # save the Fourier coefficients, type='laplacian', for later use
-nsp.OutputLoader.save(activations, 'outputs/data/spectrum_lap.obj')
+nsp.OutputLoader.save(activations, 'tutorial_2/spectrum_lap.obj')
 # -------- OPTIONAL --------
