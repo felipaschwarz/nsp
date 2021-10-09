@@ -1,4 +1,4 @@
-## Tutorials
+# Tutorials
 
 ## Tutorial 1
 
