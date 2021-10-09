@@ -70,7 +70,7 @@ Plot the generated data.
 
 |Method|Description|
 |---|---|
-|`visualize_pattern(activations, pdf_filepath, scale='layerscale', cmap_style='viridis')`|Visualize `activations: Activations` and store them at `pdf_filepath: String`.<br>`scale='layerscale'` provides one scale, i.e. colorbar, per activation layer. `scale='globalscale'` provides one scale per activation pattern. `scale='layernorm'` provides one scale per activation layer and sets the center of the scale to 0. `scale='globalnorm'` provides one scale per activation pattern and sets the center of the scale to 0. `scale='layernorm'` and `scale='globalnorm'` are particularly useful for diverging colormap styles.<br>Pick a `cmap_style` from [matplotlib colormaps](https://matplotlib.org/stable/tutorials/colors/colormaps.html).<br>Returns `None`|
+|`visualize_pattern(activations, pdf_filepath, scale='layerscale', cmap_style='viridis')`|Visualize `activations: Activations` and store them at `pdf_filepath: String`.<br>`scale='layerscale'` provides one scale, i.e. colorbar, per activation layer. `scale='globalscale'` provides one scale per activation pattern. `scale='layernorm'` provides one scale per activation layer and sets the center of the scale to 0. `scale='globalnorm'` provides one scale per activation pattern and sets the center of the scale to 0. `scale='layernorm'` and `scale='globalnorm'` are particularly useful for diverging colormap styles. Pick a `cmap_style` from [matplotlib colormaps](https://matplotlib.org/stable/tutorials/colors/colormaps.html).<br>Returns `None`|
 
 ## OutputLoader
 
