@@ -86,7 +86,7 @@ class NNGraph(nx.DiGraph):
         elif type =='laplacian':
             if self.lu_piv is None:
                 self.lu_piv = Transformer.get_inv_fourier_matrix(self, type=type)
-            return Transformer.get_fourier_coefficients(activations=activations, inv_F=None, type=type, lu_piv=lu_piv)
+            return Transformer.get_fourier_coefficients(activations=activations, inv_F=None, type=type, lu_piv=self.lu_piv)
         else:
             raise NotImplementedError
 

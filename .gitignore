@@ -5,6 +5,8 @@ datasets/
 tutorials_private/
 tutorials/outputs/
 tutorials/datasets/
+tutorials/tutorial_1/
+tutorials/tutorial_2/
 tutorials/networks/
 tutorial_10.py
 outputs/
