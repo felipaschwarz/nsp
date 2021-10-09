@@ -45,23 +45,27 @@ spectrum = graph.transform(activations)
 # compute the Fourier coefficients of the activations, type='laplacian'
 spectrum_lap = graph.transform(activations, type='laplacian')
 
+# define the visualization styles
+scale='layerscale'
+cmap_style='viridis'
+
 # visualize the activation pattern
 nsp.Visualizer.visualize_pattern(activations,
                                 pdf_filepath='tutorial_2/activations.pdf',
-                                scale='layerscale',
-                                cmap_style='plasma')
+                                scale=scale,
+                                cmap_style=cmap_style)
 
 # visualize the Fourier coefficients, type='standard'
 nsp.Visualizer.visualize_pattern(spectrum,
                                 pdf_filepath='tutorial_2/spectrum.pdf',
-                                scale='layerscale',
-                                cmap_style='plasma')
+                                scale=scale,
+                                cmap_style=cmap_style)
 
 # visualize the Fourier coefficients, type='laplacian'
 nsp.Visualizer.visualize_pattern(spectrum_lap,
                                 pdf_filepath='tutorial_2/spectrum_lap.pdf',
-                                scale='layerscale',
-                                cmap_style='plasma')
+                                scale=scale,
+                                cmap_style=cmap_style)
 
 # -------- OPTIONAL --------
 # save the activations for later use
