@@ -7,6 +7,9 @@ nsp is a Python package for extracting and visualizing activation patterns of Py
 - compute the Fourier transform of a causal signal (activation pattern) on a directed graph (neural network) based on [[1]](https://arxiv.org/pdf/2012.04358.pdf).
 - visualize activation patterns and their spectrum.
 
+## Dependencies
+
+Installation requires [pytorch](https://pytorch.org/get-started/locally/), [networkx](https://networkx.org/), and [numpy](https://numpy.org/). Some functions will use [scipy](https://www.scipy.org/) and/or [matplotlib](https://matplotlib.org/).
 
 ## Installation
 
