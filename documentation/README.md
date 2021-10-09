@@ -79,8 +79,10 @@ Markus Püschel, Bastian Seifert, and Chris Wendler. Discrete signal processing 
 [2]
 David I Shuman, Sunil K Narang, Pascal Frossard, Antonio Ortega, and Pierre Vandergheynst. The emerging field of signal processing on graphs: Extending high-dimensional data analysis to networks and other irregular domains. IEEE signal processing magazine, 30(3):83–98, 2013.
 
-<style>
-    table {
-        width: 100%;
-    }
-</style>
+<html>
+  <style>
+      table {
+          width: 100%;
+      }
+  </style>
+</html>
