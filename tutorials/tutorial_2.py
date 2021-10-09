@@ -16,7 +16,7 @@ testset = torchvision.datasets.MNIST(root='./datasets',
 
 # get one input image
 image, label = testset[0]
-# add the batch dimension from the image
+# add the batch dimension to the input image
 image = image.unsqueeze(0)
 
 # feed single input into the network and retrieve the activations
@@ -25,10 +25,21 @@ activations = nsp.Activations(network, image)
 # get the directed graph of the network
 graph = nsp.NNGraph(activations)
 
-# precompute the Fourier transform matrix, optional
+# -------- OPTIONAL --------
+# These lines are optional.
+
+# precompute the standard Fourier transform matrix
 graph.get_transformer(type='standard')
-# precompute the Fourier transform matrix, optional
+
+# precompute the laplacian Fourier transform matrix and its LU-decomposition
 graph.get_transformer(type='laplacian')
+
+# save the graph with its precomputed transforms for later use
+nsp.OutputLoader.save(graph, 'tutorial_2/data/graph.obj')
+
+# load a graph that you previously computed
+graph = nsp.OutputLoader.load('tutorial_2/data/graph.obj')
+# -------- OPTIONAL --------
 
 # compute the Fourier coefficients of the activations, default type='standard'
 spectrum = graph.transform(activations)
@@ -36,29 +47,29 @@ spectrum = graph.transform(activations)
 # compute the Fourier coefficients of the activations, type='laplacian'
 spectrum_lap = graph.transform(activations, type='laplacian')
 
-# visualize the activations
-nsp.Visualizer.visualize_activations(activations,
-                                pdf_filepath='outputs/visual/tutorial_2/activations2.pdf',
-                                style='layernorm',
+# visualize the activation pattern
+nsp.Visualizer.visualize_pattern(activations,
+                                pdf_filepath='tutorial_2/visual/activations.pdf',
+                                scale='layernorm',
                                 cmap_style='viridis')
 
 # visualize the Fourier coefficients, type='standard'
-nsp.Visualizer.visualize_activations(spectrum,
-                                pdf_filepath='outputs/visual/tutorial_2/spectrum2.pdf',
-                                style='layernorm',
+nsp.Visualizer.visualize_pattern(spectrum,
+                                pdf_filepath='tutorial_2/visual/spectrum.pdf',
+                                scale='layernorm',
                                 cmap_style='viridis')
 
 # visualize the Fourier coefficients, type='laplacian'
-nsp.Visualizer.visualize_activations(spectrum_lap,
-                                pdf_filepath='outputs/visual/tutorial_2/spectrum_lap2.pdf',
-                                style='layernorm',
+nsp.Visualizer.visualize_pattern(spectrum_lap,
+                                pdf_filepath='tutorial_2/visual/spectrum_lap.pdf',
+                                scale='layernorm',
                                 cmap_style='viridis')
 
-# save the graph with its transform for later, optional
-nsp.OutputLoader.save(graph, 'outputs/data/graph.obj')
-# load a graph that you previously computed, optional
-graph = nsp.OutputLoader.load('outputs/data/graph.obj')
-# save the activations for later use, optional
+# -------- OPTIONAL --------
+# save the activations for later use
 nsp.OutputLoader.save(activations, 'outputs/data/activations.obj')
-# save the Fourier coefficients for later use, optional
-nsp.OutputLoader.save(activations, 'outputs/data/activations.obj')
+# save the Fourier coefficients, type='standard', for later use
+nsp.OutputLoader.save(activations, 'outputs/data/spectrum.obj')
+# save the Fourier coefficients, type='laplacian', for later use
+nsp.OutputLoader.save(activations, 'outputs/data/spectrum_lap.obj')
+# -------- OPTIONAL --------

@@ -29,7 +29,7 @@ class Visualizer:
         norm = matplotlib.colors.TwoSlopeNorm(vmin=vmin, vcenter=0., vmax=vmax)
         return norm
 
-    def visualize_pattern(activations, pdf_filepath, style='globalnorm', cmap_style='viridis'):
+    def visualize_pattern(activations, pdf_filepath, scale='layerscale', cmap_style='viridis'):
         os.makedirs(os.path.dirname(pdf_filepath), exist_ok=True)
         with PdfPages(pdf_filepath) as pdf:
             globalnorm = Visualizer.get_norm(activations.layeractivations)
@@ -50,17 +50,17 @@ class Visualizer:
                 #fig.suptitle(f'Layer {index_layer+1}')
                 for i, ax in enumerate(np.array(axes).reshape(-1)):
                     if i < n_channels:
-                        if style == 'standard':
+                        if scale == 'standard':
                             cmap = ax.imshow(layeractivation[i], aspect='equal', cmap=plt.get_cmap(cmap_style))
-                        elif style == 'layernorm':
+                        elif scale == 'layernorm':
                             cmap = ax.imshow(layeractivation[i], aspect='equal', cmap=plt.get_cmap(cmap_style), norm=layernorm)
-                        elif style == 'layerscale':
+                        elif scale == 'layer':
                             cmap = ax.imshow(layeractivation[i], aspect='equal', cmap=plt.get_cmap(cmap_style), vmin=layervmin, vmax=layervmax)
-                        elif style == 'globalnorm':
+                        elif scale == 'globalnorm':
                             cmap = ax.imshow(layeractivation[i], aspect='equal', cmap=plt.get_cmap(cmap_style), norm=globalnorm)
-                        elif style == 'globalscale':
+                        elif scale == 'global':
                             cmap = ax.imshow(layeractivation[i], aspect='equal', cmap=plt.get_cmap(cmap_style), vmin=globalvmin, vmax=globalvmax)
-                        elif style == 'globalscalePositive':
+                        elif scale == 'globalPositive':
                             cmap = ax.imshow(layeractivation[i], aspect='equal', cmap=plt.get_cmap(cmap_style), vmin=0, vmax=globalvmax)
                         else:
                             raise NotImplementedError
