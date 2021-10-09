@@ -64,15 +64,13 @@ Directed graph representing in the computational graph structure of a Pytorch ne
 
 `class Visualizer`
 
-Visualize data
+Plot the generated data.
 
 #### Methods
 
 |Method|Description|
 |---|---|
-|`visualize_pattern(activations, pdf_filepath, scale='layerscale', cmap_style='viridis')`|Visualize `activations: Activations` and store them at `pdf_filepath: String`.
-
-`scale='layerscale'` provides one scale, i.e. colorbar, per activation layer. `scale='globalscale'` provides one scale, i.e. colorbar, activation.<br>`scale='layernorm'` provides one scale, i.e. colorbar, per activation layer and sets the center of the scale to 0. `scale='globalnorm'` provides one scale, i.e. colorbar, activation and sets the center of the scale to 0. `scale='layernorm'` and `scale='globalnorm'` are particularly useful for diverging colormap styles.<br>Pick a `cmap_style` from [matplotlib colormaps](https://matplotlib.org/stable/tutorials/colors/colormaps.html).<br>Returns `None`|
+|`visualize_pattern(activations, pdf_filepath, scale='layerscale', cmap_style='viridis')`|Visualize `activations: Activations` and store them at `pdf_filepath: String`.<br>`scale='layerscale'` provides one scale, i.e. colorbar, per activation layer. `scale='globalscale'` provides one scale, i.e. colorbar, activation. `scale='layernorm'` provides one scale, i.e. colorbar, per activation layer and sets the center of the scale to 0. `scale='globalnorm'` provides one scale, i.e. colorbar, activation and sets the center of the scale to 0. `scale='layernorm'` and `scale='globalnorm'` are particularly useful for diverging colormap styles.<br>Pick a `cmap_style` from [matplotlib colormaps](https://matplotlib.org/stable/tutorials/colors/colormaps.html).<br>Returns `None`|
 
 ## OutputLoader
 
