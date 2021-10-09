@@ -26,11 +26,11 @@ activations = nsp.Activations(network, image)
 graph = nsp.NNGraph(activations)
 spectrum = graph.transform(activations)
 
-nsp.Visualizer.visualize_activations(activations,
-                                pdf_filepath='outputs/visual/tutorial_1/activations.pdf',
+nsp.Visualizer.visualize_pattern(activations,
+                                pdf_filepath='outputs/tutorial_1/activations.pdf',
                                 style='layernorm',
                                 cmap_style='viridis')
-nsp.Visualizer.visualize_activations(spectrum,
-                                pdf_filepath='outputs/visual/tutorial_1/spectrum.pdf',
+nsp.Visualizer.visualize_pattern(spectrum,
+                                pdf_filepath='outputs/tutorial_1/spectrum.pdf',
                                 style='layernorm',
                                 cmap_style='viridis')

@@ -2,10 +2,9 @@ import torch
 import torchvision
 
 # -------- CONFIGURE --------
-# Choose dataset MNIST, CIFAR10 or FashionMNIST
+# Choose dataset 'MNIST', 'CIFAR10' or 'FashionMNIST' for download.
 dataset = 'MNIST'
 # -------- CONFIGURE --------
-
 
 if dataset == 'MNIST':
     transform = torchvision.transforms.Compose([torchvision.transforms.ToTensor(), torchvision.transforms.Normalize((0.1307,), (0.3081,))])
