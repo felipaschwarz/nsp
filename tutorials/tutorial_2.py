@@ -23,20 +23,20 @@ image = image.unsqueeze(0)
 activations = nsp.Activations(network, image)
 
 # get the directed graph of the network
-graph = nsp.NNGraph(activations)
+#graph = nsp.NNGraph(activations)
 
 # -------- OPTIONAL --------
 # precompute the standard Fourier transform matrix
-graph.get_transformer(type='standard')
+#graph.get_transformer(type='standard')
 
 # precompute the laplacian Fourier transform matrix and its LU-decomposition
-graph.get_transformer(type='laplacian')
+#graph.get_transformer(type='laplacian')
 
 # save the graph with its precomputed transforms for later use
-nsp.OutputLoader.save(graph, 'tutorial_2/data/graph.obj')
+#nsp.OutputLoader.save(graph, 'tutorial_2/graph.obj')
 
 # load a graph that you previously computed
-graph = nsp.OutputLoader.load('tutorial_2/data/graph.obj')
+graph = nsp.OutputLoader.load('tutorial_2/graph.obj')
 # -------- OPTIONAL --------
 
 # compute the Fourier coefficients of the activations, default type='standard'
@@ -48,20 +48,20 @@ spectrum_lap = graph.transform(activations, type='laplacian')
 # visualize the activation pattern
 nsp.Visualizer.visualize_pattern(activations,
                                 pdf_filepath='tutorial_2/activations.pdf',
-                                scale='layernorm',
-                                cmap_style='viridis')
+                                scale='layerscale',
+                                cmap_style='plasma')
 
 # visualize the Fourier coefficients, type='standard'
 nsp.Visualizer.visualize_pattern(spectrum,
                                 pdf_filepath='tutorial_2/spectrum.pdf',
-                                scale='layernorm',
-                                cmap_style='viridis')
+                                scale='layerscale',
+                                cmap_style='plasma')
 
 # visualize the Fourier coefficients, type='laplacian'
 nsp.Visualizer.visualize_pattern(spectrum_lap,
                                 pdf_filepath='tutorial_2/spectrum_lap.pdf',
-                                scale='layernorm',
-                                cmap_style='viridis')
+                                scale='layerscale',
+                                cmap_style='plasma')
 
 # -------- OPTIONAL --------
 # save the activations for later use

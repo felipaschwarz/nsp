@@ -54,11 +54,11 @@ class Visualizer:
                             cmap = ax.imshow(layeractivation[i], aspect='equal', cmap=plt.get_cmap(cmap_style))
                         elif scale == 'layernorm':
                             cmap = ax.imshow(layeractivation[i], aspect='equal', cmap=plt.get_cmap(cmap_style), norm=layernorm)
-                        elif scale == 'layer':
+                        elif scale == 'layerscale':
                             cmap = ax.imshow(layeractivation[i], aspect='equal', cmap=plt.get_cmap(cmap_style), vmin=layervmin, vmax=layervmax)
                         elif scale == 'globalnorm':
                             cmap = ax.imshow(layeractivation[i], aspect='equal', cmap=plt.get_cmap(cmap_style), norm=globalnorm)
-                        elif scale == 'global':
+                        elif scale == 'globalscale':
                             cmap = ax.imshow(layeractivation[i], aspect='equal', cmap=plt.get_cmap(cmap_style), vmin=globalvmin, vmax=globalvmax)
                         elif scale == 'globalPositive':
                             cmap = ax.imshow(layeractivation[i], aspect='equal', cmap=plt.get_cmap(cmap_style), vmin=0, vmax=globalvmax)
