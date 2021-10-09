@@ -1,6 +1,4 @@
-# Neural Network Signal Processing Tutorials
-
-Download this directory and execute the `.py` files.
+# Documentation
 
 ## Activations
 
