@@ -23,17 +23,17 @@ image = image.unsqueeze(0)
 activations = nsp.Activations(network, image)
 
 # get the directed graph of the network
-#graph = nsp.NNGraph(activations)
+graph = nsp.NNGraph(activations)
 
 # -------- OPTIONAL --------
 # precompute the standard Fourier transform matrix
-#graph.get_transformer(type='standard')
+graph.get_transformer(type='standard')
 
 # precompute the laplacian Fourier transform matrix and its LU-decomposition
-#graph.get_transformer(type='laplacian')
+graph.get_transformer(type='laplacian')
 
 # save the graph with its precomputed transforms for later use
-#nsp.OutputLoader.save(graph, 'tutorial_2/graph.obj')
+nsp.OutputLoader.save(graph, 'tutorial_2/graph.obj')
 
 # load a graph that you previously computed
 graph = nsp.OutputLoader.load('tutorial_2/graph.obj')
