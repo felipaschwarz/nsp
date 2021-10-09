@@ -71,10 +71,10 @@ class NNGraph(nx.DiGraph):
     def get_transformer(self, type='standard'):
         if type =='standard':
             self.inv_F = Transformer.get_inv_fourier_matrix(self, type=type)
-            return inv_F
+            return self.inv_F
         elif type =='laplacian':
             self.lu_piv = Transformer.get_inv_fourier_matrix(self, type=type)
-            return lu_piv
+            return self.lu_piv
         else:
             raise NotImplementedError
 
