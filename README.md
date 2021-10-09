@@ -80,9 +80,9 @@ nsp.Visualizer.visualize_pattern(activations, pdf_filepath='activations.pdf', sc
 nsp.Visualizer.visualize_pattern(spectrum, pdf_filepath='spectrum.pdf', scale='layernorm', cmap_style='viridis')
 ```
 
-#### Visualization of the activation pattern
+##### Visualization of the activation pattern
 ![activation](img/activation.png)
-#### Visualization of the spectrum
+##### Visualization of the spectrum
 ![spectrum](img/spectrum.png)
 
 For more details check out the [**tutorials**](https://github.com/felipaschwarz/nsp/tree/main/tutorials) and read the [**documentation**](https://github.com/felipaschwarz/nsp/tree/main/documentation).
