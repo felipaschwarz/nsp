@@ -70,12 +70,14 @@ spectrum = graph.transform(activations)
 Visualize the activation pattern and the spectrum. Pick your favorite `cmap_style` from [matplotlib colormaps](https://matplotlib.org/stable/tutorials/colors/colormaps.html).
 
 ```python
-nsp.Visualizer.visualize_activations(activations, pdf_filepath='activations.pdf', scale='layernorm', cmap_style='viridis')
+nsp.Visualizer.visualize_pattern(activations, pdf_filepath='activations.pdf', scale='layernorm', cmap_style='viridis')
 
-nsp.Visualizer.visualize_activations(spectrum, pdf_filepath='spectrum.pdf', scale='layernorm', cmap_style='viridis')
+nsp.Visualizer.visualize_pattern(spectrum, pdf_filepath='spectrum.pdf', scale='layernorm', cmap_style='viridis')
 ```
 
+#### Visualization of the activations
 ![activation](img/activation.png)
+#### Visualization of the spectrum
 ![spectrum](img/spectrum.png)
 
 For more details check out the [**tutorials**](https://github.com/felipaschwarz/nsp/tree/main/tutorials) and read the [**documentation**](https://github.com/felipaschwarz/nsp/tree/main/documentation).
