@@ -21,7 +21,7 @@ class Transformer:
             inv_F = scipy.sparse.tril(inv_F, format='csr')
         elif type == 'laplacian':
             # compute non-normalized graph laplacian matrix (Paper: The Emerging Field of Signal Processing on Graphs Paper, p.3/B L := D-W)
-            L = Transformer.compute_laplacian(graph)
+            L = Transformer.get_laplacian(graph)
             n = graph.number_of_nodes()
             eigenvalues, eigenvectors = np.linalg.eigh(L.asfptype().toarray())
             inv_F = scipy.linalg.lu_factor(eigenvectors)
@@ -45,7 +45,7 @@ class Transformer:
             print(x1)
             for x2 in range(x1):
                 if inv_F[x1][x2] != 0:
-                    F[x1][x2] = - Transformer.compute_moebius_sum(F, inv_F, x1, x2)
+                    F[x1][x2] = - Transformer.get_moebius_sum(F, inv_F, x1, x2)
         return F
 
     def get_fourier_coefficients(activations, inv_F=None, type='standard', lu_piv=None):

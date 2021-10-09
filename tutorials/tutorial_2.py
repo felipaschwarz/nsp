@@ -23,16 +23,12 @@ image = image.unsqueeze(0)
 activations = nsp.Activations(network, image)
 
 # get the directed graph of the network
-#graph = nsp.NNGraph(activations)
+graph = nsp.NNGraph(activations)
 
 # precompute the Fourier transform matrix, optional
-#graph.compute_transformer()
-
-# save the graph with its transform for later, optional
-#nsp.OutputLoader.save(graph, 'outputs/data/graph.obj')
-
-# load a graph that you previously computed, optional
-graph = nsp.OutputLoader.load('outputs/data/graph.obj')
+graph.get_transformer(type='standard')
+# precompute the Fourier transform matrix, optional
+graph.get_transformer(type='laplacian')
 
 # compute the Fourier coefficients of the activations, default type='standard'
 spectrum = graph.transform(activations)
@@ -58,6 +54,10 @@ nsp.Visualizer.visualize_activations(spectrum_lap,
                                 style='layernorm',
                                 cmap_style='viridis')
 
+# save the graph with its transform for later, optional
+nsp.OutputLoader.save(graph, 'outputs/data/graph.obj')
+# load a graph that you previously computed, optional
+graph = nsp.OutputLoader.load('outputs/data/graph.obj')
 # save the activations for later use, optional
 nsp.OutputLoader.save(activations, 'outputs/data/activations.obj')
 # save the Fourier coefficients for later use, optional
