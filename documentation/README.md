@@ -1,33 +1,33 @@
-# Documentation
+# Neural Network Signal Processing Tutorials
+
+Download this directory and execute the `.py` files.
 
 ## Activations
 
 `class Activations(network, input)`
 
-Hold the activation pattern generated in a neural network
+Holds the activation pattern generated in a neural network
 
 #### Parameters
 
 `network: torch.nn.Module` Pytroch neural network.
 
 `input: torch.tensor`
-A valid single input to network. For later computations make sure to pass a single input, i.e. `batch_size = 1`.
+A valid single input to the network. For later computations make sure to pass a single input, i.e. `batch_size = 1`.
 
 #### Attributes
 
-`layernames: [String]` Holds the names of the children modules of the network in a list.
+`layernames: [String]` Holds the names of the children modules, i.e. layer names, of the network in a list.
 
-`layerdescriptions: [torch.nn]` Holds the children modules of the network in a list.
+`layerdescriptions: [torch.nn]` Holds the children modules, i.e. layer types and specifications, of the network in a list.
 
 `layeractivations: [torch.tensor]` Holds the activations of every child module, i.e. values of the activation pattern, in a list.
 
-See also
-
 #### Methods
 
-`to_vector: list` 
+`to_vector()` Reshape the `layeractivations` into a vector and return them as `list`.
 
-`to_activations: Activations`
+`to_activations(signal)` Create object `Activatitions` like `self` but with `layeractivations` according to vector `signal: list` or `signal: ndarray`. Returns `Activations`.
 
 ## NNGraph
 
@@ -81,4 +81,3 @@ Markus Püschel, Bastian Seifert, and Chris Wendler. Discrete signal processing 
 
 [2]
 David I Shuman, Sunil K Narang, Pascal Frossard, Antonio Ortega, and Pierre Vandergheynst. The emerging field of signal processing on graphs: Extending high-dimensional data analysis to networks and other irregular domains. IEEE signal processing magazine, 30(3):83–98, 2013.
-
