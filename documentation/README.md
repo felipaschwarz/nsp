@@ -1,6 +1,4 @@
-# Neural Network Signal Processing Tutorials
-
-Download this directory and execute the `.py` files.
+# Documentation
 
 ## Activations
 
@@ -28,7 +26,7 @@ Holds the activation pattern generated in a neural network
 |Method|Description|
 |---|---|
 |`to_vector()`|Reshape the `layeractivations` into a vector and return them as `list`.|
-|`to_activations(signal)`|Create object `Activatitions` like `self` but with `layeractivations` according to vector `signal: list` or `signal: ndarray`. Returns `Activations`.|
+|`to_activations(signal)`|Create object `Activatitions` like `self` but with `layeractivations` according to vector `signal: list` or `signal: ndarray`.<br>Returns `Activations`.|
 
 ## NNGraph
 
@@ -56,9 +54,9 @@ Directed graph representing in the computational graph structure of a Pytorch ne
 
 |Method|Description|
 |---|---|
-|`compute_transformer(type='standard')`|If `type='standard'` it computes the inverse Fourier Transform matrix w.r.t. [[1]](https://arxiv.org/pdf/2012.04358.pdf). Returns [`scipy.sparse.tril(A, format='csr')`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.tril.html). If `type='laplacian'` it computes the inverse Fourier Transform matrix w.r.t. [[2]](https://arxiv.org/pdf/1211.0053.pdf). Returns [`lu, piv: ndarray, ndarray`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.lu_factor.html).|
+|`compute_transformer(type='standard')`|If `type='standard'` it computes the inverse Fourier Transform matrix w.r.t. [[1]](https://arxiv.org/pdf/2012.04358.pdf).<br>Returns [`scipy.sparse.tril(A, format='csr')`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.tril.html). If `type='laplacian'` it computes the inverse Fourier Transform matrix w.r.t. [[2]](https://arxiv.org/pdf/1211.0053.pdf).<br>Returns [`lu, piv: ndarray, ndarray`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.lu_factor.html).|
 |`transform(activations, type='standard')`|Compute the Fourier coefficients, or spectrum, of the `activations`. If `type='standard'` the Fourer coefficient w.r.t. [[1]](https://arxiv.org/pdf/2012.04358.pdf) are computed. If `type='laplacian'` the Fourer coefficient w.r.t. [[2]](https://arxiv.org/pdf/1211.0053.pdf) are computed. Returns `Activations`.|
-|`node_id(node)`|Return the index of a node in the `NNGraph` in the total order of all nodes. Returns `int`.|
+|`node_id(node)`|Return the index of a node in the `NNGraph` in the total order of all nodes.<br>Returns `int`.|
 
 ## OutputLoader
 
@@ -70,8 +68,8 @@ Store and load intermediate results. Especially useful for storing `NNGraph` and
 
 |Method|Description|
 |---|---|
-|`save(obj, path)`|Store python object like `Activations` or `NNGrpah` at the specified `path: String`. Returns `None`.|
-|`load(path)`|Load python object like `Activations` or `NNGrpah` at the specified `path: String`. Returns `object`.|
+|`save(obj, path)`|Store python object like `Activations` or `NNGrpah` at the specified `path: String`.<br>Returns `None`.|
+|`load(path)`|Load python object like `Activations` or `NNGrpah` at the specified `path: String`.<br>Returns `object`.|
 
 
 ## References
