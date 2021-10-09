@@ -11,8 +11,7 @@ Holds the activation pattern generated in a neural network
 #### Parameters
 
 |---|---|
-|`network: torch.nn.Module`|
-Pytroch neural network.|
+|`network: torch.nn.Module`|Pytroch neural network.|
 
 |`input: torch.tensor`|
 A valid single input to the network. For later computations make sure to pass a single input, i.e. `batch_size = 1`.|
