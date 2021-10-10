@@ -26,7 +26,7 @@ pip install nsp
 
 ## Usage
 
-Get your network as `torch.nn.Module` and input image.
+Get your network as `torch.nn.Module` and a valid input.
 
 ```python
 import torch
