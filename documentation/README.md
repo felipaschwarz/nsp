@@ -27,7 +27,7 @@ Holds the activation pattern generated in a neural network
 
 |Method|Description|
 |---|---|
-|`to_vector()`|Reshape the `layeractivations` into a vector and return them as `list`.|
+|`to_vector()`|Get and reshape the `layeractivations` into a vector.<br>Returns `list`.|
 |`to_activations(signal)`|Create object `Activatitions` like `self` but with `layeractivations` according to vector `signal: list` or `signal: ndarray`.<br>Returns `Activations`.|
 
 ## NNGraph
