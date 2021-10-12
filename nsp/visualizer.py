@@ -5,22 +5,24 @@ from matplotlib.backends.backend_pdf import PdfPages
 import os
 
 class Visualizer:
-    def get_min_max(matrix):
+    """Plot the generated data."""
+
+    def _get_min_max(matrix):
         vmin = min(matrix.view(-1))
         vmax = max(matrix.view(-1))
         return vmin, vmax
 
-    def get_global_min_max(matrix_list):
+    def _get_global_min_max(matrix_list):
         vmin = 0
         vmax = 0
         for m in matrix_list:
-            new_vmin, new_vmax = Visualizer.get_min_max(m)
+            new_vmin, new_vmax = Visualizer._get_min_max(m)
             vmin = min(vmin, new_vmin)
             vmax = max(vmax, new_vmax)
         return vmin, vmax
 
-    def get_norm(matrix_list):
-        vmin, vmax = Visualizer.get_global_min_max(matrix_list)
+    def _get_norm(matrix_list):
+        vmin, vmax = Visualizer._get_global_min_max(matrix_list)
         absmax = max(abs(vmin), abs(vmax))
         if absmax == 0.:
             absmax = 1.e-307
@@ -30,14 +32,43 @@ class Visualizer:
         return norm
 
     def visualize_pattern(activations, pdf_filepath, scale='layerscale', cmap_style='viridis'):
+        """
+        Visualize an activation pattern.
+
+        Layers are visualized on seperate pages.
+        Channels are visualized as seperately on one page.
+
+        Parameters
+        ----------
+        activations : Activations
+            Activations to visualize.
+        pdf_filepath : str
+            Pdf path to store the visualization.
+        scale : {'layerscale', 'layernorm', 'globalscale', 'globalnorm'}, default 'layerscale'
+            Scaling of the colomap.
+            - 'layerscale'  : provides one color scale per activation layer.
+            - 'layernorm'   : provides one color scale per activation layer
+                                and sets the center of the scale to 0.
+            - 'globalscale' : provides one color scale per activation pattern.
+            - 'globalnorm'  : provides one color scale per activation pattern
+                                and sets the center of the scale to 0.s
+            The options 'layernorm' and 'globalnorm' are particularly useful for diverging colormap styles.
+        cmap_style : str, default 'viridis'
+            Pick a `cmap_style` from the matplotlib colormaps
+            (https://matplotlib.org/stable/tutorials/colors/colormaps.html).
+
+        Returns
+        -------
+        None
+        """
         os.makedirs(os.path.dirname('./'+pdf_filepath), exist_ok=True)
         with PdfPages(pdf_filepath) as pdf:
-            globalnorm = Visualizer.get_norm(activations.layeractivations)
-            globalvmin, globalvmax = Visualizer.get_global_min_max(activations.layeractivations)
+            globalnorm = Visualizer._get_norm(activations.layeractivations)
+            globalvmin, globalvmax = Visualizer._get_global_min_max(activations.layeractivations)
 
             for index_layer, (layeractivation, layername) in enumerate(zip(activations.layeractivations, activations.layernames)):
-                layervmin, layervmax = Visualizer.get_global_min_max(layeractivation)
-                layernorm = Visualizer.get_norm(layeractivation)
+                layervmin, layervmax = Visualizer._get_global_min_max(layeractivation)
+                layernorm = Visualizer._get_norm(layeractivation)
 
                 max_cols = 4
                 if (len(layeractivation.shape) == 1):

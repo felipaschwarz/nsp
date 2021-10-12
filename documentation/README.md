@@ -48,15 +48,15 @@ Directed graph representing in the computational graph structure of a Pytorch ne
 
 |Attribute|Description|
 |---|---|
-|`inv_F: scipy.sparse.tril(A, format='csr')`|Inverse Fourier Transform matrix w.r.t. [[1]](https://arxiv.org/pdf/2012.04358.pdf) and [[2]](https://acl.inf.ethz.ch/research/ASP/). Is `None` until the first invocation of `NNGraph.transform(activations, type='standard')` or can be explicitly assigned by calling `NNGraph.compute_transformer(type='standard')`.|
-|`lu_piv: ndarray, ndarray`|LU-decomposition of the inverse Fourier Transform matrix w.r.t. [[3]](https://arxiv.org/pdf/1211.0053.pdf). Is `None` until the first invocation of `NNGraph.transform(activations, type='laplacian')` or can be explicitly assigned by calling `NNGraph.compute_transformer(type='laplacian')`.|
+|`inv_F: scipy.sparse.tril(A, format='csr')`|Inverse Fourier Transform matrix w.r.t. [[1]](https://arxiv.org/pdf/2012.04358.pdf) and [[2]](https://acl.inf.ethz.ch/research/ASP/). Is `None` until the first invocation of `NNGraph.transform(activations, type='standard')` or can be explicitly assigned by calling `NNGraph.get_transformer(type='standard')`.|
+|`lu_piv: ndarray, ndarray`|LU-decomposition of the inverse Fourier Transform matrix w.r.t. [[3]](https://arxiv.org/pdf/1211.0053.pdf). Is `None` until the first invocation of `NNGraph.transform(activations, type='laplacian')` or can be explicitly assigned by calling `NNGraph.get_transformer(type='laplacian')`.|
 
 
 #### Methods
 
 |Method|Description|
 |---|---|
-|`compute_transformer(type='standard')`|If `type='standard'` it computes the inverse Fourier Transform matrix w.r.t. [[1]](https://arxiv.org/pdf/2012.04358.pdf) and [[2]](https://acl.inf.ethz.ch/research/ASP/).<br>Returns [`scipy.sparse.tril(A, format='csr')`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.tril.html). If `type='laplacian'` it computes the inverse Fourier Transform matrix w.r.t. [[3]](https://arxiv.org/pdf/1211.0053.pdf).<br>Returns [`lu, piv: ndarray, ndarray`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.lu_factor.html).|
+|`get_transformer(type='standard')`|If `type='standard'` it computes the inverse Fourier Transform matrix w.r.t. [[1]](https://arxiv.org/pdf/2012.04358.pdf) and [[2]](https://acl.inf.ethz.ch/research/ASP/).<br>Returns [`scipy.sparse.tril(A, format='csr')`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.tril.html). If `type='laplacian'` it computes the inverse Fourier Transform matrix w.r.t. [[3]](https://arxiv.org/pdf/1211.0053.pdf).<br>Returns [`lu, piv: ndarray, ndarray`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.lu_factor.html).|
 |`transform(activations, type='standard')`|Compute the Fourier coefficients, or spectrum, of the `activations`. If `type='standard'` the Fourer coefficient w.r.t. [[1]](https://arxiv.org/pdf/2012.04358.pdf) and [[2]](https://acl.inf.ethz.ch/research/ASP/) are computed. If `type='laplacian'` the Fourer coefficient w.r.t. [[3]](https://arxiv.org/pdf/1211.0053.pdf) are computed. Returns `Activations`.|
 |`node_id(node)`|Get the index of a node in the `NNGraph` in the total order of all nodes.<br>Returns `int`.|
 
