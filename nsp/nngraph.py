@@ -4,7 +4,7 @@ import torch
 import torch.nn as nn
 import copy
 
-from transformer import Transformer
+from .transformer import Transformer
 
 class NNGraph(nx.DiGraph):
     """Directed graph representing in the computational graph structure of a Pytorch neural network.
