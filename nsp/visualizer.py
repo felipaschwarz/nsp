@@ -30,7 +30,7 @@ class Visualizer:
         return norm
 
     def visualize_pattern(activations, pdf_filepath, scale='layerscale', cmap_style='viridis'):
-        os.makedirs(os.path.dirname(pdf_filepath), exist_ok=True)
+        os.makedirs(os.path.dirname('./'+pdf_filepath), exist_ok=True)
         with PdfPages(pdf_filepath) as pdf:
             globalnorm = Visualizer.get_norm(activations.layeractivations)
             globalvmin, globalvmax = Visualizer.get_global_min_max(activations.layeractivations)
