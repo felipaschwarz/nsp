@@ -29,12 +29,13 @@ pip install nsp
 Get your network as `torch.nn.Module` and a valid input.
 
 ```python
+import nsp
 import torch
 import torch.nn as nn
 
-class Network_1(nn.Module):
+class Network(nn.Module):
     def __init__(self):
-        super(Network_1, self).__init__()
+        super(Network, self).__init__()
         self.conv1 = nn.Conv2d(in_channels=1, out_channels=2, kernel_size=2)
         self.conv2 = nn.Conv2d(in_channels=2, out_channels=8, kernel_size=2)
         self.fc1 = nn.Linear(1*4*8, 8)
@@ -46,7 +47,7 @@ class Network_1(nn.Module):
         x = self.fc1(x)
         return x
 
-network = Network()
+network = Networks()
 image = torch.tensor([[[[-6, -1, -2,  5],
                         [-3, -6,  5,  4],
                         [ 2,  5, -6,  3],
