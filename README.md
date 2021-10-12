@@ -47,7 +47,7 @@ class Network(nn.Module):
         x = self.fc1(x)
         return x
 
-network = Networks()
+network = Network()
 image = torch.tensor([[[[-6, -1, -2,  5],
                         [-3, -6,  5,  4],
                         [ 2,  5, -6,  3],
