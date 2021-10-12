@@ -14,7 +14,7 @@ class Transformer:
 
         Returns
         -------
-        ndarray
+        numpy.ndarray
         """
         undir_graph = graph.to_undirected()
         degrees = [val for (node, val) in sorted(undir_graph.degree(), key=lambda pair: pair[0])]
@@ -40,7 +40,7 @@ class Transformer:
         -------
         scipy.sparse.tril(A, format='csr')
             if `type='standard'`.
-        ndarray, ndarray
+        numpy.ndarray, numpy.ndarray
             if `type='laplacian'`.
         """
         if  type == 'standard':
@@ -81,7 +81,7 @@ class Transformer:
 
         Returns
         -------
-        ndarray
+        numpy.ndarray
         """
         inv_F = inv_F.toarray()
         # compute fourier matrix via moebius function ((5) in Causal Signal Processing Paper)
@@ -112,7 +112,7 @@ class Transformer:
         inv_F : scipy.sparse
             Inverse Fourier transform matrix.
             Required if `type='standard'`.
-        lu_piv : ndarray, ndarray
+        lu_piv : numpy.ndarray, numpy.ndarray
             LU-decomposition of the Inverse Fourier transform matrix.
             Required if `type='laplacian'`.
 

@@ -29,7 +29,7 @@ class NNGraph(nx.DiGraph):
         Inverse Fourier Transform matrix w.r.t. https://acl.inf.ethz.ch/research/ASP/.
         Is `None` until the first invocation of `NNGraph.transform(activations, type='standard')`
         or can be explicitly assigned by calling `NNGraph.compute_transformer(type='standard')`.
-    lu_piv : ndarray, ndarray
+    lu_piv : numpy.ndarray, numpy.ndarray
         LU-decomposition of the inverse Fourier Transform matrix w.r.t. https://arxiv.org/pdf/1211.0053.pdf.
         Is `None` until the first invocation of `NNGraph.transform(activations, type='laplacian')`
         or can be explicitly assigned by calling `NNGraph.compute_transformer(type='laplacian')`.
@@ -111,7 +111,7 @@ class NNGraph(nx.DiGraph):
         -------
         scipy.sparse.tril(A, format='csr')
             if `type='standard'`.
-        ndarray, ndarray
+        numpy.ndarray, numpy.ndarray
             if `type='laplacian'`.
         """
         if type =='standard':
