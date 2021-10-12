@@ -48,8 +48,8 @@ Directed graph representing in the computational graph structure of a Pytorch ne
 
 |Attribute|Description|
 |---|---|
-|`inv_F: scipy.sparse.tril(A, format='csr')`|Inverse Fourier Transform matrix w.r.t. [[1]](https://arxiv.org/pdf/2012.04358.pdf). Is `None` until the first invocation of `NNGraph.transform(activations, type='standard')` or can be explicitly assigned by calling `NNGraph.compute_transformer(type='standard')`.|
-|`lu_piv: ndarray, ndarray`|LU-decomposition of the inverse Fourier Transform matrix w.r.t. [[2]](https://arxiv.org/pdf/1211.0053.pdf). Is `None` until the first invocation of `NNGraph.transform(activations, type='laplacian')` or can be explicitly assigned by calling `NNGraph.compute_transformer(type='laplacian')`.|
+|`inv_F: scipy.sparse.tril(A, format='csr')`|Inverse Fourier Transform matrix w.r.t. [[1]](https://arxiv.org/pdf/2012.04358.pdf) and [[2]](https://acl.inf.ethz.ch/research/ASP/). Is `None` until the first invocation of `NNGraph.transform(activations, type='standard')` or can be explicitly assigned by calling `NNGraph.compute_transformer(type='standard')`.|
+|`lu_piv: ndarray, ndarray`|LU-decomposition of the inverse Fourier Transform matrix w.r.t. [[3]](https://arxiv.org/pdf/1211.0053.pdf). Is `None` until the first invocation of `NNGraph.transform(activations, type='laplacian')` or can be explicitly assigned by calling `NNGraph.compute_transformer(type='laplacian')`.|
 
 
 #### Methods
@@ -91,4 +91,7 @@ Store and load intermediate results. Especially useful for storing `NNGraph` and
 Markus Püschel, Bastian Seifert, and Chris Wendler. Discrete signal processing on meet/join lattices. IEEE Transactions on Signal Processing, 2021.
 
 [2]
+Bastian Seifert, Chris Wendler and Markus Püschel. A Causal Shift and Fourier Transform for Directed Acyclic Graphs. Submitted for publication, 2021.
+
+[3]
 David I Shuman, Sunil K Narang, Pascal Frossard, Antonio Ortega, and Pierre Vandergheynst. The emerging field of signal processing on graphs: Extending high-dimensional data analysis to networks and other irregular domains. IEEE signal processing magazine, 30(3):83–98, 2013.
