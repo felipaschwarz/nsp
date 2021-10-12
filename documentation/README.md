@@ -57,7 +57,7 @@ Directed graph representing in the computational graph structure of a Pytorch ne
 |Method|Description|
 |---|---|
 |`compute_transformer(type='standard')`|If `type='standard'` it computes the inverse Fourier Transform matrix w.r.t. [[1]](https://arxiv.org/pdf/2012.04358.pdf) and [[2]](https://acl.inf.ethz.ch/research/ASP/).<br>Returns [`scipy.sparse.tril(A, format='csr')`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.tril.html). If `type='laplacian'` it computes the inverse Fourier Transform matrix w.r.t. [[3]](https://arxiv.org/pdf/1211.0053.pdf).<br>Returns [`lu, piv: ndarray, ndarray`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.lu_factor.html).|
-|`transform(activations, type='standard')`|Compute the Fourier coefficients, or spectrum, of the `activations`. If `type='standard'` the Fourer coefficient w.r.t. [[1]](https://arxiv.org/pdf/2012.04358.pdf) and [2]](https://acl.inf.ethz.ch/research/ASP/) are computed. If `type='laplacian'` the Fourer coefficient w.r.t. [[3]](https://arxiv.org/pdf/1211.0053.pdf) are computed. Returns `Activations`.|
+|`transform(activations, type='standard')`|Compute the Fourier coefficients, or spectrum, of the `activations`. If `type='standard'` the Fourer coefficient w.r.t. [[1]](https://arxiv.org/pdf/2012.04358.pdf) and [[2]](https://acl.inf.ethz.ch/research/ASP/) are computed. If `type='laplacian'` the Fourer coefficient w.r.t. [[3]](https://arxiv.org/pdf/1211.0053.pdf) are computed. Returns `Activations`.|
 |`node_id(node)`|Get the index of a node in the `NNGraph` in the total order of all nodes.<br>Returns `int`.|
 
 ## Visualizer
