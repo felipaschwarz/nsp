@@ -97,15 +97,15 @@ class NNGraph(nx.DiGraph):
 
     def get_transformer(self, type='standard'):
         """
-        Compute the Fourier transformations for the graph.
+        Compute the inverse Fourier transformations for the graph.
 
         Parameters
         ----------
-        type : {'standard', 'laplacian'}
+        type : {'standard', 'laplacian'}, default 'standard'
             - 'standard' : computes the inverse Fourier Transform matrix w.r.t.
                             https://acl.inf.ethz.ch/research/ASP/ and puts it in `self.inv_F.
             - 'laplacian' : computes the LU-Decomposition of the inverse Fourier Transform matrix w.r.t.
-                            https://arxiv.org/pdf/1211.0053.pdf and puts it in `self.lu_piv`
+                            https://arxiv.org/pdf/1211.0053.pdf and puts it in `self.lu_piv`.
 
         Returns
         -------
@@ -133,7 +133,7 @@ class NNGraph(nx.DiGraph):
         ----------
         activations : Activation
             Activation to transfrom.
-        type : {'standard', 'laplacian'}
+        type : {'standard', 'laplacian'}, default 'standard'
             - 'standard' : computes the inverse Fourier Transform matrix w.r.t.
                             https://acl.inf.ethz.ch/research/ASP/ and puts it in `self.inv_F.
             - 'laplacian' : computes the LU-Decomposition of the inverse Fourier Transform matrix w.r.t.
