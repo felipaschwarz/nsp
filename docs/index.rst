@@ -10,6 +10,7 @@ Welcome to nsp's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   nsp/visualizer
    modules
 
 Indices and tables

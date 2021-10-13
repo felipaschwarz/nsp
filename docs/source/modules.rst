@@ -5,4 +5,3 @@ nsp
    :maxdepth: 4
 
    nsp
-   setup
