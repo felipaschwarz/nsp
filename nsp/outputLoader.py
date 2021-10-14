@@ -4,7 +4,6 @@ import os
 class OutputLoader():
     """
     Store and load intermediate results.
-
     Especially useful for storing `NNGraph` and their transformers
         `inv_F` or `lu_piv` since their computations take long and
         they can be used to transform multiple `Activations`.
