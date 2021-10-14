@@ -52,6 +52,7 @@ class Visualizer:
                 - 'globalscale' : provides one color scale per activation pattern.
                 - 'globalnorm'  : provides one color scale per activation pattern
                                     and sets the center of the scale to 0.
+                                    
             The options 'layernorm' and 'globalnorm' are particularly useful for diverging colormap styles.
         cmap_style : str, default 'viridis'
             Pick a `cmap_style` from the matplotlib colormaps
