@@ -106,7 +106,7 @@ class Transformer:
             Activation to transfrom.
         type : {'standard', 'laplacian'}, default 'standard'
             - 'standard' : computes the inverse Fourier Transform matrix w.r.t.
-                            https://acl.inf.ethz.ch/research/ASP/ and puts it in `self.inv_F.
+                            https://acl.inf.ethz.ch/research/ASP/ and puts it in `self.inv_F`.
             - 'laplacian' : computes the LU-Decomposition of the inverse Fourier Transform matrix w.r.t.
                             https://arxiv.org/pdf/1211.0053.pdf and puts it in `self.lu_piv`
         inv_F : scipy.sparse

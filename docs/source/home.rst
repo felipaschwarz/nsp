@@ -1,7 +1,7 @@
-nsp
-===
+Home
+====
 
 .. toctree::
    :maxdepth: 4
 
-   nsp
+   ../README.md

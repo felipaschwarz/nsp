@@ -7,11 +7,11 @@ Welcome to nsp's documentation!
 ===============================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
    :caption: Contents:
 
-   nsp/visualizer
-   modules
+   source/home
+   source/modules
 
 Indices and tables
 ==================

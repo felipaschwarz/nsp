@@ -46,12 +46,12 @@ class Visualizer:
             Pdf path to store the visualization.
         scale : {'layerscale', 'layernorm', 'globalscale', 'globalnorm'}, default 'layerscale'
             Scaling of the colomap.
-            - 'layerscale'  : provides one color scale per activation layer.
-            - 'layernorm'   : provides one color scale per activation layer
-                                and sets the center of the scale to 0.
-            - 'globalscale' : provides one color scale per activation pattern.
-            - 'globalnorm'  : provides one color scale per activation pattern
-                                and sets the center of the scale to 0.s
+                - 'layerscale'  : provides one color scale per activation layer.
+                - 'layernorm'   : provides one color scale per activation layer
+                                    and sets the center of the scale to 0.
+                - 'globalscale' : provides one color scale per activation pattern.
+                - 'globalnorm'  : provides one color scale per activation pattern
+                                    and sets the center of the scale to 0.
             The options 'layernorm' and 'globalnorm' are particularly useful for diverging colormap styles.
         cmap_style : str, default 'viridis'
             Pick a `cmap_style` from the matplotlib colormaps

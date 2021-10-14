@@ -1,8 +1,13 @@
 nsp package
 ===========
 
-Submodules
-----------
+Module contents
+---------------
+
+.. automodule:: nsp
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 nsp.activations module
 ----------------------
@@ -40,14 +45,6 @@ nsp.visualizer module
 ---------------------
 
 .. automodule:: nsp.visualizer
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Module contents
----------------
-
-.. automodule:: nsp
    :members:
    :undoc-members:
    :show-inheritance:

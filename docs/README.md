@@ -8,9 +8,9 @@ nsp is a Python package for extracting and visualizing activation patterns of Py
 - visualize activation patterns and their Fourier coefficients.
 
 ##### Visualization of the activation pattern
-![activation](img/activation_mnist.png)
+![activation](/activation_mnist.png)
 ##### Visualization of the Fourier coefficients
-![spectrum](img/spectrum_mnist.png)
+![spectrum](/spectrum_mnist.png)
 
 ## Dependencies
 
@@ -82,9 +82,9 @@ nsp.Visualizer.visualize_pattern(spectrum, pdf_filepath='spectrum.pdf', scale='l
 ```
 
 ##### Visualization of the activation pattern
-![activation](img/activation.png)
+![activation](/activation.png)
 ##### Visualization of the spectrum
-![spectrum](img/spectrum.png)
+![spectrum](/spectrum.png)
 
 For more details check out the [**tutorials**](https://github.com/felipaschwarz/nsp/tree/main/tutorials) and read the [**documentation**](https://github.com/felipaschwarz/nsp/tree/main/docs).
 
