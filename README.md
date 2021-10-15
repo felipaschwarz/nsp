@@ -86,7 +86,7 @@ nsp.Visualizer.visualize_pattern(spectrum, pdf_filepath='spectrum.pdf', scale='l
 ##### Visualization of the spectrum
 ![spectrum](img/spectrum.png)
 
-For more details check out the [**tutorials**](https://github.com/felipaschwarz/nsp/tree/main/tutorials) and read the [**documentation**](https://github.com/felipaschwarz/nsp/tree/main/docs).
+For more details check out the [**tutorials**](https://github.com/felipaschwarz/nsp/tree/main/tutorials) and read the [**documentation**](https://nsp.readthedocs.io/en/latest/).
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
